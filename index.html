@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Klustaviewa by klusta-team</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Klustaviewa</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/klusta-team/klustaviewa">View the Project on GitHub <small>klusta-team/klustaviewa</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/klusta-team/klustaviewa/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/klusta-team/klustaviewa/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/klusta-team/klustaviewa">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>KlustaViewa</h1>
+
+<p><em>KlustaViewa</em> is the code name for the next-generation spike-sorting software 
+adapted to high-channel count silicon probes. Written in Python, it aims at 
+being flexible and extendable by the user.</p>
+
+<p>The first step is to create a new semi-automatic graphical interface
+(code name: <em>KlustaViewa</em>) for
+the manual stage that comes after the automatic clustering algorithms.
+This interface automatically guides the user through similar clusters,
+showing the most relevant feature projections, and asks him or her to make merge or
+split decisions. The goal is to make the manual stage more reliable, less
+error-prone and quicker than what it currently is.</p>
+
+<p>This software was developed by Cyrille Rossant in the <a href="http://www.ucl.ac.uk/cortexlab">Cortical Processing Laboratory</a> at UCL.</p>
+
+<h2>Installation</h2>
+
+<p>The software is still in development, but you can download an experimental
+version here.</p>
+
+<h3>Step 1</h3>
+
+<p>If you don't already have a Python distribution, install <a href="http://www.enthought.com/products/edudownload.php">Enthought Python Distribution</a> (EPD), which is free for academics (*EPD ACADEMIC SUBSCRIPTION* and <strong>NOT</strong> <em>EPD FREE</em>).</p>
+
+<p>You need to click on <em>request an academic license here</em> on the webpage and create an account with your <strong>academic e-mail address</strong>.</p>
+
+<h3>Step 2</h3>
+
+<p><a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">Download KlustaViewa</a></p>
+
+<h3>Step 3</h3>
+
+<p>Extract this ZIP file in a temporary folder.</p>
+
+<h3>Step 4</h3>
+
+<ul>
+<li>On Windows, double-click on <code>windows_install.bat</code>.</li>
+<li>On other systems, open a system shell in the temporary directory where
+you extracted the package, and execute the following command:
+<code>python setup.py install</code>.</li>
+</ul><h3>Step 5</h3>
+
+<p>To run the software, execute <code>klustaviewa</code> in a system shell.</p>
+
+<p>On Windows, you may need to add <code>C:\Python27\Scripts</code> in the PATH variable,
+as <a href="http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx">described here</a>.</p>
+
+<h2>Gallery</h2>
+
+<p><a href="images/img0.png"><img src="images/thumbnails/img0.png" alt="Screenshot 1"></a>
+<a href="images/img1.png"><img src="images/thumbnails/img1.png" alt="Screenshot 2"></a>
+<a href="images/img2.png"><img src="images/thumbnails/img2.png" alt="Screenshot 3"></a></p>
+
+<h2>Installation for advanced users</h2>
+
+<h3>Dependencies</h3>
+
+<p>The following libraries are required:</p>
+
+<ul>
+<li>Python 2.7</li>
+<li>Numpy</li>
+<li>Pandas &gt;= 0.10</li>
+<li>Matplotlib &gt;= 1.1.1</li>
+<li>PyOpenGL &gt;= 3.0.1</li>
+<li>either PyQt4 or PySide</li>
+</ul><p>There are two possibilities to install these dependencies.</p>
+
+<h4>Use an all-in-one Python distribution</h4>
+
+<p>All these dependencies are included in the 
+<a href="http://www.enthought.com/products/epd.php">Enthought Python Distribution</a> (EPD),
+which is free for academics.</p>
+
+<h4>Install all packages one by one</h4>
+
+<p>This solution can be useful if you already have a Python installation and 
+only a few packages are missing.</p>
+
+<ul>
+<li>On Windows, <a href="http://www.lfd.uci.edu/%7Egohlke/pythonlibs/">find the packages on this webpage</a>.</li>
+<li>On OS X, find them on <a href="http://mxcl.github.com/homebrew/">Homebrew</a> or <a href="http://www.macports.org/">Macports</a>
+</li>
+<li>
+<p>On Ubuntu, use <code>apt-get install</code> with the appropriate package name, which you can find <a href="http://packages.ubuntu.com/">here</a>:</p>
+
+<pre><code>sudo apt-get install python-numpy python-pandas python-matplotlib python-opengl python-qt4 python-qt4-gl
+</code></pre>
+</li>
+</ul><h3>Installer</h3>
+
+<p><a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">Download KlustaViewa</a>, extract that package
+and execute <code>python setup.py install</code>.</p>
+
+<h3>Development version</h3>
+
+<p>Use this if you want to be able to update with <code>git pull</code> (you need git).</p>
+
+<ul>
+<li>
+<p>Clone the repository:</p>
+
+<pre><code>git clone https://github.com/rossant/klustaviewa.git
+</code></pre>
+</li>
+<li>
+<p>Install KlustaViewa with <code>pip</code> so that external packages are automatically
+updated (like <code>qtools</code> which contains some Qt-related utility functions):</p>
+
+<pre><code>pip install -r requirements.txt
+</code></pre>
+</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/klusta-team">klusta-team</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
