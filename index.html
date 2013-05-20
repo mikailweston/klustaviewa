@@ -20,12 +20,12 @@
 
         <p class="view"><a href="https://github.com/klusta-team/klustaviewa">View the Project on GitHub <small>klusta-team/klustaviewa</small></a></p>
 
-<!--
+
         <ul>
           <li><a href="https://github.com/klusta-team/klustaviewa/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/klusta-team/klustaviewa/tarball/master">Download <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/klusta-team/klustaviewa">View On <strong>GitHub</strong></a></li>
-        </ul>-->
+        </ul>
       </header>
       <section>
         <h1>KlustaViewa</h1>
@@ -39,6 +39,11 @@ The goal is to make the manual stage more reliable, quicker, and less
 error-prone.</p>
 
 <p>This software was developed by Cyrille Rossant in the <a href="http://www.ucl.ac.uk/cortexlab">Cortical Processing Laboratory</a> at UCL.</p>
+
+<h2>Screenshots</h2>
+
+<p><a href="images/img0.PNG"><img src="images/thumbnails/img0.png" alt="Screenshot 1"></a>
+<a href="images/img1.PNG"><img src="images/thumbnails/img1.png" alt="Screenshot 2"></a></p>
 
 <h2>Installation</h2>
 
@@ -67,8 +72,6 @@ download:</p>
 <li>PyQt4</li>
 <li>Distribute</li>
 <li>(optional) Pip (for installing Python packages easily)</li>
-<li>(optional) PyTables (for a future version which will support HDF5)</li>
-<li>(optional) IPython (for interactive computing)</li>
 <li>(optional) Nose (for unit tests)</li>
 </ul><p>For each package, be sure to choose the appropriate version (it should be
 <code>*.win-amd64-py2.7.exe</code> for Python 64 bits, or <code>*.win32-py2.7.exe</code>
@@ -81,25 +84,57 @@ listed above.</p>
 
 <h4>Ubuntu &gt;= 13.x</h4>
 
-<p>(Untested) Type in a shell:</p>
+<p>Type in a shell:</p>
 
-<pre><code>$ sudo apt-get install python2.7 python-numpy python-pandas python-matplotlib python-opengl python-qt4 python-qt4-gl python-distribute python-pip python-nose ipython
+<pre><code>$ sudo apt-get install python2.7 python-numpy python-pandas python-matplotlib python-opengl python-qt4 python-qt4-gl python-distribute python-pip python-nose
 </code></pre>
 
 <h4>Ubuntu &lt; 13.x</h4>
 
-<p>(Untested) Type in a shell:</p>
+<p>Type in a shell:</p>
 
-<pre><code>$ sudo apt-get install python2.7 python-matplotlib python-opengl python-qt4 python-qt4-gl python-distribute python-pip python-nose ipython
-$ sudo pip install numpy
-$ sudo pip install pandas
+<pre><code>$ sudo apt-get install python2.7 python-matplotlib python-opengl python-qt4 python-qt4-gl python-distribute python-pip python-nose
 </code></pre>
 
-<p>The reason is that old versions of Ubuntu do not provide packages for NumPy 1.7 and Pandas 0.10. Using <code>pip</code> means compiling the libraries directly, which may not work all the time. Another solution is to download the correct Ubuntu packages available for the latest Ubuntu distributions, and install them on the old Ubuntu.</p>
+<p>Then, you need to install NumPy &gt;= 1.7 and Pandas &gt;= 0.10, and they are only available for Ubuntu &gt;= 13.x. To install them on Ubuntu &lt; 13.x, you can do the following:</p>
+
+<ul>
+<li>
+<p>Go <a href="http://packages.ubuntu.com/raring/python/">here</a> and download:</p>
+
+<ul>
+<li>python-numpy</li>
+<li>python-pandas-lib</li>
+<li>python-pandas</li>
+</ul>
+</li>
+<li><p>Install them, in that order, with <code>dpgk -i python-numpy_1.7.1-1ubuntu1_amd64.deb</code> and so on, replacing the file name with the appropriate ones (<code>amd64</code> for Python 64 bits, <code>i386</code> for Python 32 bits).</p></li>
+</ul><h4>IPython 1.0.dev</h4>
+
+<p>This step is optional and only useful to experienced users. If IPython 1.0.dev is installed, then you will have the possibility to open an IPython terminal in the context of the GUI. This lets you access all elements and data variables programatically. To install this version of IPython, do the following:</p>
+
+<ul>
+<li>Ensure that any version of IPython is uninstalled.</li>
+<li>Install pygments with <code>pip install pygments</code>
+</li>
+<li>
+<p>Execute the following commands:</p>
+
+<pre><code>git clone https://github.com/ipython/ipython.git
+cd ipython
+python setupegg.py develop
+</code></pre>
+</li>
+</ul><p>Then, in the software, you will be able to open an interactive IPython shell (with pylab mode activated) in the Views menu. Type <code>%who</code> to see the list of available variables.</p>
 
 <h3>Step 2</h3>
 
-<p><a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">Download KlustaViewa.</a></p>
+<ul>
+<li>Windows &amp; Python 64 bits: <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.win-amd64-py2.7.exe">download and install KlustaViewa.</a>
+Skip steps 3 and 4 and go directly to step 5.</li>
+<li>Other configurations: <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">download KlustaViewa.</a>
+</li>
+</ul><p>Some portions of the code are accelerated using Cython, so you need a C compiler like gcc if you want to use the accelerated version. If you don't have one, a slower version will be automatically used.</p>
 
 <h3>Step 3</h3>
 
@@ -118,12 +153,6 @@ you extracted the package, and execute the following command:
 
 <p>On Windows, you may need to add <code>C:\Python27\Scripts</code> in the PATH variable,
 as <a href="http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx">described here</a>.</p>
-
-<h2>Gallery</h2>
-
-<p><a href="images/img0.png"><img src="images/thumbnails/img0.png" alt="Screenshot 1"></a>
-<a href="images/img1.png"><img src="images/thumbnails/img1.png" alt="Screenshot 2"></a>
-<a href="images/img2.png"><img src="images/thumbnails/img2.png" alt="Screenshot 3"></a></p>
 
 <h2>Details</h2>
 
@@ -181,35 +210,6 @@ updated (like <code>qtools</code> which contains some Qt-related utility functio
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-6774000-4");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-          
-          
-          
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=8790036; 
-var sc_invisible=1; 
-var sc_security="30d701b7"; 
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="free hit
-counters" href="http://statcounter.com/free-hit-counter/"
-target="_blank"><img class="statcounter"
-src="http://c.statcounter.com/8790036/0/30d701b7/1/"
-alt="free hit counters"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
-          
-          
-          
+    
   </body>
 </html>
