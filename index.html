@@ -20,18 +20,15 @@
 
         <p class="view"><a href="https://github.com/klusta-team/klustaviewa">View the Project on GitHub <small>klusta-team/klustaviewa</small></a></p>
 
-<!--
+
         <ul>
           <li><a href="https://github.com/klusta-team/klustaviewa/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/klusta-team/klustaviewa/tarball/master">Download <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/klusta-team/klustaviewa">View On <strong>GitHub</strong></a></li>
-        </ul>-->
+        </ul>
       </header>
       <section>
-        <h1>
-<a name="klustaviewa" class="anchor" href="#klustaviewa"><span class="octicon octicon-link"></span></a>KlustaViewa</h1>
-
-<p><em>KlustaViewa</em> is a software for semi-automatic spike sorting with high-channel count silicon probes. It streamlines the manual stage occurring after the automatic clustering stage by guiding the user through the clustered data, letting him or her refine the clusters. The goal is to make the manual stage more reliable, quicker, and less error-prone.</p>
+        <p><em>KlustaViewa</em> is a software for semi-automatic spike sorting with high-channel count silicon probes. It streamlines the manual stage occurring after the automatic clustering stage by guiding the user through the clustered data, letting him or her refine the clusters. The goal is to make the manual stage more reliable, quicker, and less error-prone.</p>
 
 <p>This software was developed by Cyrille Rossant in the <a href="http://www.ucl.ac.uk/cortexlab">Cortical Processing Laboratory</a> at UCL.</p>
 
@@ -56,47 +53,139 @@
 </ul><h3>
 <a name="windows-78-64-bits" class="anchor" href="#windows-78-64-bits"><span class="octicon octicon-link"></span></a>Windows 7/8 64 bits</h3>
 
+<h4>
+<a name="method-1-preferred-full-installer" class="anchor" href="#method-1-preferred-full-installer"><span class="octicon octicon-link"></span></a>Method 1 (preferred: full installer)</h4>
+
 <ul>
-<li>Step 1: if you don't already have a Python installation, <a href="http://klustaviewa.rossant.net/klustaviewa-dependencies.zip">download this ZIP file (70MB)</a> containing a full Python distribution (required by KlustaViewa).</li>
+<li>Step 1: <a href="http://klustaviewa.rossant.net/klustaviewa-setup.exe">download the KlustaViewa Full Installer for Windows 64 bits (&gt;200MB)</a>.</li>
+<li>Step 2: execute the installer.</li>
+<li>Step 3: click on the <em>KlustaViewa</em> icon on your desktop or in the Start menu to launch the software.</li>
+<li>Step 4: to update the software at any time, execute <em>Update KlustaViewa</em> in the Start menu (you need an active Internet connection).</li>
+</ul><h4>
+<a name="method-2-manual-method" class="anchor" href="#method-2-manual-method"><span class="octicon octicon-link"></span></a>Method 2 (manual method)</h4>
+
+<p>Use this only if you know what you're doing and you don't want to use the first method.</p>
+
+<ul>
+<li>Step 1: if you don't already have a Python installation, <a href="http://klustaviewa.rossant.net/klustaviewa-dependencies.zip">download this ZIP file (72MB)</a> containing a full Python distribution (required by KlustaViewa).</li>
 <li>Step 2: unzip the archive. You'll find several installers: execute them all one by one, in the right order.</li>
-<li>Step 3: download the <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.win-amd64-py2.7.exe">KlustaViewa Windows 64 bits installer (&lt;1MB)</a> and execute it.</li>
-<li>Step 4: you can launch the software using the executable found in <code>C:\Python27\Scripts\klustaviewa.exe</code>. You can create a shortcut to this file on your desktop.</li>
+<li>Step 3: download the <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.win-amd64-py2.7.exe">KlustaViewa Light Installer for Windows 64 bits (&lt;1MB)</a> and execute it.</li>
+<li>Step 4: you can launch the software with the shortcut named <em>KlustaViewa</em> on your desktop and in the start menu.</li>
 </ul><p>Once the software is installed, you can update it when a new version is available by doing again <strong>Step 3</strong> only.</p>
 
 <h3>
-<a name="ubuntu" class="anchor" href="#ubuntu"><span class="octicon octicon-link"></span></a>Ubuntu</h3>
+<a name="ubuntu--1210" class="anchor" href="#ubuntu--1210"><span class="octicon octicon-link"></span></a>Ubuntu &gt;= 12.10</h3>
 
 <ul>
 <li>
-<p>Step 1: on Ubuntu &gt;= 13.x, type in a shell:</p>
+<p>Step 1: type in a shell:</p>
 
 <pre><code>$ sudo apt-get install python2.7 python-numpy python-pandas python-matplotlib python-opengl python-qt4 python-qt4-gl python-distribute python-pip python-nose
 </code></pre>
+</li>
+<li><p>Step 2: <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">download KlustaViewa</a> and extract the package.</p></li>
+<li>
+<p>Step 3: open a system shell in the directory where you extracted the package, and execute the following command:</p>
 
-<p>On Ubuntu &lt; 13.x, type:</p>
-
-<pre><code>$ sudo apt-get install python2.7 python-matplotlib python-opengl python-qt4 python-qt4-gl python-distribute python-pip python-nose
+<pre><code>sudo python setup.py install
 </code></pre>
 </li>
 <li>
-<p>Step 2: <strong>UBUNTU &lt; 13.x ONLY</strong>. Go <a href="http://packages.ubuntu.com/raring/python/">here</a> and download:</p>
+<p>Step 4: to run KlustaViewa, type the following command in a system shell:</p>
+
+<pre><code>klustaviewa
+</code></pre>
+</li>
+</ul><h3>
+<a name="ubuntu--1210-1" class="anchor" href="#ubuntu--1210-1"><span class="octicon octicon-link"></span></a>Ubuntu &lt; 12.10</h3>
 
 <ul>
-<li>python-numpy</li>
-<li>python-pandas-lib</li>
-<li>python-pandas</li>
-</ul>
-<p>Install them, in that order, with <code>dpgk -i python-numpy_1.7.1-1ubuntu1_amd64.deb</code> and so on, replacing the file name with the appropriate ones (<code>amd64</code> for Python 64 bits, <code>i386</code> for Python 32 bits).</p>
-</li>
-<li><p>Step 3: <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">download KlustaViewa</a> and extract the package.</p></li>
 <li>
-<p>Step 4: open a system shell in the directory where you extracted the package, and execute the following command:</p>
+<p>Step 1: install ActivePython-2.7.</p>
+
+<ul>
+<li>Step 1.1: <a href="http://www.activestate.com/activepython/downloads/thank-you?dl=http://downloads.activestate.com/ActivePython/releases/2.7.2.5/ActivePython-2.7.2.5-linux-x86_64.tar.gz">download the package</a>. <a href="http://www.activestate.com/activepython/downloads">Here is the link to the main website for your reference</a>. </li>
+<li>
+<p>Step 1.2: install it with:</p>
+
+<pre><code>tar xzf ActivePython-2.7.2.5-linux-x86_64.tar.gz
+cd ActivePython-2.7.2.5-linux-x86_64
+sudo ./install.sh
+</code></pre>
+</li>
+<li>
+<p>Step 1.3: put the following line in your <code>~/.bashrc</code>:</p>
+
+<pre><code>export PATH=/opt/ActivePython-2.7/bin:$PATH
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Step 2: to install the required Python packages, type in a shell:</p>
+
+<pre><code>pypm install distribute numpy pandas matplotlib pyopengl
+</code></pre>
+</li>
+<li>
+<p>Step 3: Install Qt 4.8.4 and the Python headers:</p>
+
+<pre><code>$ sudo apt-get install qt-sdk python-dev
+</code></pre>
+</li>
+<li>
+<p>Step 4: Install SIP 4.14.7:</p>
+
+<ul>
+<li>Step 4.1: <a href="http://sourceforge.net/projects/pyqt/files/sip/sip-4.14.7/sip-4.14.7.tar.gz">download the source</a>.</li>
+<li>
+<p>Step 4.2: extract the package.</p>
+
+<pre><code>$ tar -xvf sip-4.14.7.tar.gz
+</code></pre>
+</li>
+<li>
+<p>Step 4.3: type in the extracted directory:</p>
+
+<pre><code>$ cd sip-4.14.7
+$ sudo /opt/ActivePython-2.7/bin/python configure.py
+$ sudo make
+$ sudo make install
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Step 5: install PyQt 4.10.2:</p>
+
+<ul>
+<li>Step 5.1: <a href="http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.10.2/PyQt-x11-gpl-4.10.2.tar.gz/download">download the source</a>.</li>
+<li>
+<p>Step 5.2: extract the package:</p>
+
+<pre><code>$ tar -xvf PyQt-x11-gpl-4.10.2.tar.gz
+</code></pre>
+</li>
+<li>
+<p>Step 5.3: in the extracted directory, type the following commands thay may take a while (grab a coffee). Note that you need to specify the path to SIP, which is generally <code>/opt/ActivePython-2.7/bin/sip</code>. You need to look further up the end of the output of the last command in step 4.3.</p>
+
+<pre><code>$ sudo /opt/ActivePython-2.7/bin/python configure-ng.py --sip=/opt/ActivePython-2.7/bin/sip
+$   yes
+$ sudo make
+$ sudo make install
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Step 6: <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">download KlustaViewa</a> and extract the package.</p></li>
+<li>
+<p>Step 7: open a system shell in the directory where you extracted the package, and execute the following command:</p>
 
 <pre><code>python setup.py install
 </code></pre>
 </li>
 <li>
-<p>Step 5: to run KlustaViewa, type the following command in a system shell:</p>
+<p>Step 8: to run KlustaViewa, type the following command in a system shell:</p>
 
 <pre><code>klustaviewa
 </code></pre>
@@ -105,27 +194,61 @@
 <a name="mac-os-x" class="anchor" href="#mac-os-x"><span class="octicon octicon-link"></span></a>Mac OS X</h3>
 
 <ul>
+<li><p>Step 0 (only for OS X 10.8): allow unsigned applications installation in your system preferences so that you can install the packages. <a href="https://www.my-private-network.co.uk/knowledge-base/apple-related-questions/osx-unsigned-apps.html">Here are the instructions for OS X 10.8</a>.</p></li>
+<li><p>Step 1: <a href="http://downloads.activestate.com/ActivePython/releases/2.7.2.5/ActivePython-2.7.2.5-macosx10.5-i386-x86_64.dmg">install ActivePython</a>. <a href="http://www.activestate.com/activepython/downloads">Here is the link to the main website for your reference</a>.</p></li>
 <li>
-<p>Step 1: go on <a href="http://mxcl.github.io/homebrew/">HomeBrew</a> and install the following packages:</p>
+<p>Step 2: to install the required Python packages, type in a shell:</p>
+
+<pre><code>sudo pypm install numpy
+sudo pypm install pandas
+sudo pypm install matplotlib
+sudo pypm install pyopengl
+</code></pre>
+</li>
+<li><p>Step 3: <a href="http://itunes.apple.com/us/app/xcode/id497799835?ls=1&amp;mt=12">install Apple Xcode</a>.</p></li>
+<li><p>Step 4: <a href="http://stackoverflow.com/questions/9329243/xcode-4-4-command-line-tools?answertab=votes#tab-top">install the Xcode command line tools</a>.</p></li>
+<li><p>Step 5: <a href="http://download.qt-project.org/official_releases/qt/4.8/4.8.4/qt-mac-opensource-4.8.4.dmg">install Qt 4.8.4</a>.</p></li>
+<li>
+<p>Step 6: Install SIP 4.14.7:</p>
 
 <ul>
-<li>Python 2.7</li>
-<li>Numpy &gt;= 1.7</li>
-<li>Pandas &gt;= 0.10</li>
-<li>Matplotlib &gt;= 1.1.1</li>
-<li>PyOpenGL &gt;= 3.0.1</li>
-<li>PyQt4</li>
+<li>Step 6.1: <a href="http://sourceforge.net/projects/pyqt/files/sip/sip-4.14.7/sip-4.14.7.tar.gz">download the source</a>.</li>
+<li>Step 6.2: extract the package.</li>
+<li>
+<p>Step 6.3: type in the extracted directory:</p>
+
+<pre><code>$ sudo python configure.py
+$ sudo make
+$ sudo make install
+</code></pre>
+</li>
 </ul>
 </li>
-<li><p>Step 2: <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">download KlustaViewa</a> and extract the package.</p></li>
 <li>
-<p>Step 3: open a system shell in the directory where you extracted the package, and execute the following command:</p>
+<p>Step 7: install PyQt 4.10.2:</p>
 
-<pre><code>python setup.py install
+<ul>
+<li>Step 7.1: <a href="http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.10.2/PyQt-mac-gpl-4.10.2.tar.gz">download the source</a>.</li>
+<li>Step 7.2: extract the package.</li>
+<li>
+<p>Step 7.3: in the extracted directory, type the following commands thay may take a while (grab a coffee). Note that you need to specify the path to SIP, which is generally either <code>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/sip</code> or <code>/System/Library/Frameworks/Python.framework/Versions/2.7/bin/sip</code>. You need to look further up the end of the output of the last command in step 6.3.</p>
+
+<pre><code>$ sudo python configure-ng.py --sip=[SIP_PATH_THAT_YOU_NEED_TO_COPY_FROM_THE_OUTPUT_OF_STEP_6]
+$ sudo make
+$ sudo make install
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Step 8: <a href="http://klustaviewa.rossant.net/klustaviewa-0.1.0.dev.zip">download KlustaViewa</a> and extract the package.</p></li>
+<li>
+<p>Step 9: open a system shell in the directory where you extracted the package, and execute the following command:</p>
+
+<pre><code>sudo python setup.py install
 </code></pre>
 </li>
 <li>
-<p>Step 4: to run KlustaViewa, type the following command in a system shell:</p>
+<p>Step 10: to run KlustaViewa, type the following command in a system shell:</p>
 
 <pre><code>klustaviewa
 </code></pre>
@@ -140,10 +263,10 @@
 
 <ul>
 <li>Python 2.7</li>
-<li>Numpy &gt;= 1.7</li>
-<li>Pandas &gt;= 0.10</li>
-<li>Matplotlib &gt;= 1.1.1</li>
-<li>PyOpenGL &gt;= 3.0.1</li>
+<li>Numpy</li>
+<li>Pandas</li>
+<li>Matplotlib</li>
+<li>PyOpenGL</li>
 <li>either PyQt4 or PySide</li>
 </ul><h3>
 <a name="opengl" class="anchor" href="#opengl"><span class="octicon octicon-link"></span></a>OpenGL</h3>
@@ -204,7 +327,12 @@ python setupegg.py develop
 </ul><h3>
 <a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h3>
 
-<p>If you have any trouble, bug, comment or suggestion, please send an e-mail to the author of the software: cyrille <em>dot</em> rossant <em>at</em> gmail <em>dot</em> com.</p>
+<p>If you have any trouble, bug, comment or suggestion:</p>
+
+<ul>
+<li>You can <a href="https://groups.google.com/forum/?fromgroups#!forum/klustaviewas">send a message on the Google group</a>.</li>
+<li>You can send an e-mail to the author of the software: cyrille <em>dot</em> rossant <em>at</em> gmail <em>dot</em> com.</li>
+</ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/klusta-team">klusta-team</a></p>
@@ -213,40 +341,5 @@ python setupegg.py develop
     </div>
     <script src="javascripts/scale.fix.js"></script>
     
-    
-    
-    <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-6774000-4");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-          
-          
-          
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=8790036; 
-var sc_invisible=1; 
-var sc_security="30d701b7"; 
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="free hit
-counters" href="http://statcounter.com/free-hit-counter/"
-target="_blank"><img class="statcounter"
-src="http://c.statcounter.com/8790036/0/30d701b7/1/"
-alt="free hit counters"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
-          
-          
-          
   </body>
 </html>
-    
-    
-    
