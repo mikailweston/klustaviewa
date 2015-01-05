@@ -57,6 +57,7 @@ def compute_statistics(Fet1, Fet2, spikes_in_clusters, masks):
         # now, take the modified features here
         # MyFet2 = y[MyPoints, :]
         MyFet2 = np.take(y, MyPoints, axis=0).astype(np.float64)
+        MyMasks = np.take(masks, MyPoints, axis=0)
         # if len(MyPoints) > nDims:
         # LogProp = np.log(len(MyPoints) / float(nPoints)) # log of the proportion in cluster c
         Mean = np.mean(MyFet2, axis=0).reshape((1, -1))
@@ -64,7 +65,7 @@ def compute_statistics(Fet1, Fet2, spikes_in_clusters, masks):
         if len(MyPoints) <= 1:
             CovMat = 1e-3*np.eye(nDims)
             stats[c] = (Mean, CovMat, 1e3*np.eye(nDims),
-                (1e-3)**nDims, len(MyPoints))
+                (1e-3)**nDims, len(MyPoints), np.zeros(nDims, dtype=np.bool))
             continue
 
 
@@ -101,8 +102,10 @@ def compute_statistics(Fet1, Fet2, spikes_in_clusters, masks):
         if _sign < 0:
             warn("The correlation matrix of cluster %d has a negative determinant (whaaat??)" % c)
 
+        # Boolean vector of size (nchannels,): which channels are unmasked?
+        unmask = (MyMasks>0).mean(axis=0)
 
-        stats[c] = (Mean, CovMat, CovMatinv, LogDet, len(MyPoints))
+        stats[c] = (Mean, CovMat, CovMatinv, LogDet, len(MyPoints), unmask)
 
     return stats
 
@@ -149,9 +152,15 @@ def compute_correlations_approximation(features, clusters, masks,
                 C[ci, cj] = C[cj, ci] = 0.
             continue
 
-        mui, Ci, Ciinv, logdeti, npointsi = stats[ci]
+        mui, Ci, Ciinv, logdeti, npointsi, unmaski = stats[ci]
         for cj in clusterslist:
-            muj, Cj, Cjinv, logdetj, npointsj = stats[cj]
+            muj, Cj, Cjinv, logdetj, npointsj, unmaskj = stats[cj]
+
+            # Only go on if the two cluster mask vectors are similar enough.
+            sim = (unmaski * unmaskj).max()
+            if sim < .99:
+                C[ci, cj] = C[cj, ci] = 0.
+                continue
 
             dmu = (muj - mui).reshape((-1, 1))
 
